@@ -1,0 +1,19 @@
+{
+  "name": "Narysium-rol",
+  "scripts": {
+    "start": "node ./server/index.js",
+    "dev": "nodemon ./server/index.js"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dkuroi/Narysium-rol.git",
+  "author": "dkuroi <kaerit@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "firebase-admin": "^9.1.1",
+    "morgan": "^1.10.0",
+    "node-sass": "^4.14.1"
+  }
+}
