@@ -1,8 +1,10 @@
 const server = require('./server');
+const _PORT = process.env.PORT || 3000;
+
 
 async function main() {
-    await server.listen(3000);
-    console.log('Server on port', 3000);
+    await server.listen(_PORT);
+    console.log('Server on port', _PORT);
 }
 
 main();
