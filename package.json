@@ -1,8 +1,8 @@
 {
   "name": "Narysium-rol",
   "scripts": {
-    "start": "node ./server/index.js",
-    "dev": "nodemon ./server/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "version": "1.0.0",
   "main": "index.js",
@@ -10,10 +10,13 @@
   "author": "dkuroi <kaerit@hotmail.com>",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
     "firebase-admin": "^9.1.1",
     "morgan": "^1.10.0",
-    "node-sass": "^4.14.1"
+    "node-fetch": "^2.6.1",
+    "node-sass": "^4.14.1",
+    "oauth": "^0.9.15",
+    "twitter": "^1.7.1"
   }
 }
