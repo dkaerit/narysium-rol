@@ -26,8 +26,11 @@ router.get('/normas', (req, res) => {
 
 router.get('/userlist', (req, res) => {
     db.ref('members').on('value', snap => {
-        let members = snap.val();
-        res.render('userlist.html', {"data": members});
+        var members = snap.val();
+        db.ref('faceclaims').on('value', snap => {
+            var fcs = snap.val();
+            res.render('userlist.html', {"members": members, "fcs": fcs});
+        });
     })
     
 });
@@ -40,7 +43,6 @@ router.get('/statususer', (req, res) => {
     tweets["users"].map((it,ix) => {
         let time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
         let activity_limit = 1210000000;
-        //let activity_limit = 121;
         let is_active = (time_range <= activity_limit)?"activo":"inactivo"
 
         coll[it["screen_name"]] = {
@@ -54,8 +56,6 @@ router.get('/statususer', (req, res) => {
 
     console.log(coll);
     db.ref('members').set(coll);
-    
-    /*res.render('userlist.html', {followers: coll});*/
     });
 })
 
