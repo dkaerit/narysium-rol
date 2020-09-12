@@ -1,8 +1,10 @@
 const { Router } = require('express'), router = Router();
-const { admin } = require('../config/database');
+const admin = require('../config/database');
 const fetch = require("node-fetch");
-var OAuth = require('oauth').OAuth;
+const OAuth = require('oauth').OAuth;
 
+/* BEGIN DECLARACIONES */
+const db = admin.database();
 const twit = require('twitter'), twitter = new twit({
     consumer_key: '0vbx3b74deOeSUA3LbJHP7gWe',
     consumer_secret: 'naW5AOwpzIq86fY1HUTAx1xPIrD7yoi9tV1MM3TVkTtVt0LQOn',
@@ -11,6 +13,8 @@ const twit = require('twitter'), twitter = new twit({
 });
 var key = '0vbx3b74deOeSUA3LbJHP7gWe';
 var secret = 'naW5AOwpzIq86fY1HUTAx1xPIrD7yoi9tV1MM3TVkTtVt0LQOn';
+/* END DECLARACIONES */
+
 
 router.get('/', (req, res) => {
     res.render('index.html');
@@ -21,18 +25,37 @@ router.get('/normas', (req, res) => {
 });
 
 router.get('/userlist', (req, res) => {
-    res.render('userlist.html');
+    db.ref('members').on('value', snap => {
+        let members = snap.val();
+        res.render('userlist.html', {"data": members});
+    })
+    
 });
 
-router.get('/userlist', (req, res) => {
+router.get('/statususer', (req, res) => {
+   
     twitter.get('friends/list', (tw_err, tweets) => {
-        if(tw_err) throw tw_err;
-        tweets["users"].map((it,ix) => {
-            let time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
-            let activity_limit = 1210000000;
-            console.log(it["id"], it["screen_name"], dhm(time_range), (time_range <= activity_limit)?"activo":"inactivo");
-        });
-        res.render('index', {followers: ""});
+    if(tw_err) throw tw_err;
+    let coll = {};
+    tweets["users"].map((it,ix) => {
+        let time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
+        let activity_limit = 1210000000;
+        //let activity_limit = 121;
+        let is_active = (time_range <= activity_limit)?"activo":"inactivo"
+
+        coll[it["screen_name"]] = {
+            "id": it["id"],
+            "name": it["screen_name"],
+            "dhm": dhm(time_range),
+            "status": is_active
+        };
+        
+    });
+
+    console.log(coll);
+    db.ref('members').set(coll);
+    
+    /*res.render('userlist.html', {followers: coll});*/
     });
 })
 
@@ -45,7 +68,8 @@ function dhm(ms){
     minutes = Math.floor((hoursms)/(60*1000));
     minutesms=ms % (60*1000);
     sec = Math.floor((minutesms)/(1000));
-    return days+"d - "+hours+"h "+minutes+"m "+sec+"s";
+    //return days+" d, "+hours+":"+minutes+":"+sec;
+    return days;
 }
 
 
