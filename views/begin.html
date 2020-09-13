@@ -108,7 +108,7 @@ animation: fadeIn ease 20s;
 <body>
     <h1>
       <span class="text-wrapper">
-            <span class="letters">Cuanto más te acerques a la luz</span>
+            <span class="letters">Sigue el camino de pétalos blancos</span>
       </span>
     </h1>
     <img class="lighto" src="/assets/light.gif">
@@ -167,22 +167,29 @@ animation: fadeIn ease 20s;
     animate();
     var count = 0;
 
+    var msgs = [
+        'ellos te marcarán el camino',
+        'Pero ten cuidado',
+        'el sendero es oscuro e incierto',
+        'acecha un mal que desconoces',
+        'mas no temas',
+        'mientras no te alejes del camino',
+        'todo irá bien'
+        ];
+
     $(document).click(() => {
         $(".lighto-on").css("opacity", "0");
-        if(count != 3) {
-            switch(count) {
-            case 0: $('h1 span span').html('mayor será tu sombra'); count++; break;
-            case 1: $('h1 span span').html('Pero no debes tener miedo'); count++; break;
-            case 2: $('h1 span span').html('Pues posees el arma más poderosa de todas'); count++; break;
-            case 3: $('h1 span span').html('hola'); count++; break;
-            }
-        
+
+
+        if(count != msgs.length) {
+            $('h1 span span').html(msgs[count]); 
+            count++;
             animate();
         } else {
             window.location.replace("/home");
         }
 
     });
-    </script>
+</script>
 </body>
 </html>
