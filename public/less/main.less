@@ -82,7 +82,8 @@ p {
 
 .wrapper p::first-letter {
     font-size: 4.3em;
-    font-family: serif;
+    /*font-family: serif;*/
+    font-family: kaisg;
     margin: -13px 8px -19px 0px;
     float: left;
 }
@@ -184,3 +185,9 @@ b, strong {
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@900&family=Gentium+Book+Basic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+@font-face {
+    font-family: 'kaisg';
+    src: url('/assets/kaisg.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+     url('/assets/kaisg.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
