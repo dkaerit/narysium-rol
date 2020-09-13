@@ -16,11 +16,11 @@ var secret = 'naW5AOwpzIq86fY1HUTAx1xPIrD7yoi9tV1MM3TVkTtVt0LQOn';
 /* END DECLARACIONES */
 
 
-router.get('/', (req, res) => {
+router.get('/home', (req, res) => {
     res.render('index.html');
 });
 
-router.get('/begin', (req, res) => {
+router.get('/', (req, res) => {
     res.render('begin.html');
 });
 

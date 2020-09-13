@@ -67,12 +67,15 @@ animation: fadeIn ease 20s;
     h1 {
   	color: white;
   	top : 50%;
-  	transform : translateY(-50%);
-  	font-family: 'Open Sans Condensed', sans-serif;
-  	text-transform: uppercase;
+    transform : translateY(-50%);
+    /*font-family: 'Open Sans Condensed', sans-serif;*/
+    /*font-family: 'Gentium Book Basic', serif;*/
+  	font-family: 'Gentium Book Basic', serif;
+  	/*text-transform: uppercase;*/
   	font-weight: 300;
-  	font-size: 0.9em;
-  	letter-spacing: 10px;
+    font-size: 0.9em;
+    font-style: italic;
+  	letter-spacing: 8px;
   	position : relative;
   	text-align: center;
     }
@@ -91,6 +94,10 @@ animation: fadeIn ease 20s;
     will-change: transform;
 
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@900&family=Gentium+Book+Basic&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
     </style>
 </head>
 <body>
@@ -164,7 +171,7 @@ animation: fadeIn ease 20s;
         
             animate();
         } else {
-            window.location.replace("/");
+            window.location.replace("/home");
         }
 
     });
