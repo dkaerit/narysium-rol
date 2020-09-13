@@ -52,7 +52,6 @@ animation: fadeIn ease 20s;
 
     img.lighto-on {
     position: absolute;
-    top: 51.1%;
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%);
@@ -79,6 +78,9 @@ animation: fadeIn ease 20s;
   	position : relative;
   	text-align: center;
     }
+    /*pc*/@media (max-width: 750px) {img.lighto-on {top: 51.1%;}}
+    /*movil*/@media (max-width: 365px) {img.lighto-on {top: 50%;}}
+    /*tablet*/@media (min-width: 751px) {img.lighto-on {top: 51.1%;}}
 
     h1 .text-wrapper {
   	position: relative;
