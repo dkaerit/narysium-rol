@@ -20,6 +20,10 @@ router.get('/', (req, res) => {
     res.render('index.html');
 });
 
+router.get('/begin', (req, res) => {
+    res.render('begin.html');
+});
+
 router.get('/normas', (req, res) => {
     res.render('normas.html');
 });

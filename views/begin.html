@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narysium rol</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+
+    <style>
+    .fade-in {
+animation: fadeIn ease 20s;
+-webkit-animation: fadeIn ease 20s;
+-moz-animation: fadeIn ease 20s;
+-o-animation: fadeIn ease 20s;
+-ms-animation: fadeIn ease 20s;
+}
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+    img.lighto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    }
+
+    img.lighto-on {
+    position: absolute;
+    top: 51.1%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: 0.6s ease-in;
+    }
+
+    body { 
+    background-color : #030303; 
+    height: 100vh;
+    }
+    h1 {
+  	color: white;
+  	top : 50%;
+  	transform : translateY(-50%);
+  	font-family: 'Open Sans Condensed', sans-serif;
+  	text-transform: uppercase;
+  	font-weight: 300;
+  	font-size: 0.9em;
+  	letter-spacing: 10px;
+  	position : relative;
+  	text-align: center;
+    }
+
+    h1 .text-wrapper {
+  	position: relative;
+    display: inline-block;
+
+    }
+
+    h1 .letter {
+  	transform-origin: 50% 100%;
+    display: inline-block;
+    line-height: 1em;
+    transform: translateZ(0); /*for older browsers*/
+    will-change: transform;
+
+    }
+    </style>
+</head>
+<body>
+    <h1>
+      <span class="text-wrapper">
+            <span class="letters">Cuanto más te acerques a la luz</span>
+      </span>
+    </h1>
+    <img class="lighto" src="/assets/light.gif">
+    <img class="lighto-on" src="/assets/light-on.gif">
+
+<script>
+
+    function animate() {
+        $('h1 .letters').each(function(){
+        $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter' data-letter='$&'>$&</span>"));
+        });
+
+        anime.timeline(
+            {loop: false}
+        )
+        .add({
+            targets: 'h1 .letter',
+            scale: {
+                value: [0, 1],
+                duration: 950
+            },
+            translateY : [function() { return anime.random(-10, 10); }, 0],
+            translateX : [function() { return anime.random(-10, 0); }, 0],
+            opacity: [0, 1],
+            filter: {
+            value: ["blur(35px)", "blur(0px)"],
+            duration: 800
+            },
+            duration: 750,
+            elasticity: 300,
+            delay: function(el, i) {
+                return 75 * (i+1)
+            },
+            update: function(anim) {
+                // console.log(anim.currentTime + 'ms'); // Get current animation time with `myAnimation.currentTime`, return value in ms.
+                // console.log(anim.progress + '%'); // Get current animation progress with `myAnimation.progress`, return value in %
+            },
+            begin: function(anim, target) {
+                //console.log(anim.began); // true after 1000ms
+                
+            }
+        }).add({
+            targets: 'h1',
+            opacity: 1,
+            duration: 250,
+            easing: "easeOutExpo",
+            delay: 0
+        });
+        
+        console.log($("h1 span span").text(), (100 - $("h1 span span").text().length) * 11);
+        setTimeout(() => { $(".lighto-on").css("opacity", "1"); }, 2450 - ((101 - $("h1 span span").text().length) * 12));
+    }
+
+    animate();
+    var count = 0;
+
+    $(document).click(() => {
+        $(".lighto-on").css("opacity", "0");
+        if(count != 3) {
+            switch(count) {
+            case 0: $('h1 span span').html('mayor será tu sombra'); count++; break;
+            case 1: $('h1 span span').html('Pero no debes tener miedo'); count++; break;
+            case 2: $('h1 span span').html('Pues posees el arma más poderosa de todas'); count++; break;
+            }
+        
+            animate();
+        } else {
+            window.location.replace("/");
+        }
+
+    });
+    </script>
+</body>
+</html>
