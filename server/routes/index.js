@@ -16,6 +16,10 @@ var secret = 'naW5AOwpzIq86fY1HUTAx1xPIrD7yoi9tV1MM3TVkTtVt0LQOn';
 /* END DECLARACIONES */
 
 
+router.get('/map', (req, res) => {
+    res.render('map.html');
+});
+
 router.get('/home', (req, res) => {
     res.render('index.html');
 });
@@ -62,7 +66,7 @@ router.get('/statususer', (req, res) => {
         
     });
 
-    console.log(coll);
+    /*console.log(coll);*/
     db.ref('members').set(coll);
     });
 })

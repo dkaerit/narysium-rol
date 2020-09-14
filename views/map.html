@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include(`./layouts/inner_head.html`) %>
+    <style>
+        .map {
+            width: 1500px;
+            height: 1079px;
+            background-image: url(/assets/Narysium-colored.png);
+            background-size: cover;
+        }
+
+        .point {
+            width: 30px;
+            height: 30px;
+            background: #bfbfbf;
+            border: 7px solid #04070a;
+            z-index: 1;
+            box-shadow: 0px 0px 8px #1f5177;
+            position: relative;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <%- include(`./layouts/navbar.html`) %>
+    <div class="map">
+        <div class="point" style="top: 19%; left: 51%"></div>
+        <div class="point" style="top: 41%; left: 54%"></div>
+        <div class="point" style="top: 39%; left: 36%"></div>
+        <div class="point" style="top: 67%; left: 48%"></div>
+        <div class="point" style="top: 43%; left: 55%"></div>
+        <div class="point" style="top: 30%; left: 73%"></div>
+        <div class="point" style="top: 68%; left: 66%"></div>
+        <div class="point" style="top: 73%; left: 26%"></div>
+    </div>
+</body>
+</html>
+    
+
