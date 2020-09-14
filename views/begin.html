@@ -59,38 +59,6 @@ animation: fadeIn ease 20s;
     transition: 0.6s ease-in;
     }
 
-    .option-chart {
-        position: absolute;
-        left: 50%;
-        bottom: 0%;
-        letter-spacing: 1px;
-        transform: translate(-50%, 200%);
-        z-index: -1;
-        width: 80%;
-        transition: 1s;
-        filter: blur(0.4px);
-    }
-
-    question {
-        transition: 1s;
-        opacity: 0;
-    }
-    .option {
-        transition: 1s;
-        opacity: 0;
-        padding: 10px;
-        margin: 5px;
-        transition: 0.2s ease-in;
-    }
-    .option:hover {
-        padding: 10px;
-        margin: 5px;
-        background: #fff;
-        padding: 10px;
-        color: #000;
-        transition: 0.4s ease-in;
-    }
-
     body { 
     background-color : #030303; 
     height: 100vh;
@@ -135,6 +103,46 @@ animation: fadeIn ease 20s;
     @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@900&family=Gentium+Book+Basic&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
+
+    /* chart */
+    .option-chart {
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        letter-spacing: 1px;
+        transform: translate(-50%, -25%);
+        z-index: 0;
+        width: 80%;
+        transition: 1s;
+        filter: blur(0.4px);
+        color: #ffffff;
+        font-style: italic;
+        font-family: 'Gentium Book Basic', serif;
+        text-align: center;
+    }
+
+    question {
+        transition: 1s;
+        opacity: 0;
+    }
+    .option {
+        transition: 1s;
+        opacity: 0;
+        padding: 10px;
+        border: 1px solid #fff;
+        margin: 5px;
+        transition: 0.2s ease-in;
+        background: #ffffff08;
+    }
+    .option:hover {
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+        background: #fff!important;
+        padding: 10px;
+        color: #000!important;
+        transition: 0.4s ease-in;
+    }
     </style>
 </head>
 <body>
@@ -142,22 +150,29 @@ animation: fadeIn ease 20s;
       <span class="text-wrapper">
             <span class="letters">Ves un rastro de pétalos</span>
       </span>
-      <div class="option-chart">
-          <question>¿Qué harás?</question>
-          <br><br>
-          <div class="option option1">Seguir el rastro</div>
-          <div class="option option2">Seguir mi propio camino</div>
-      </div>
     </h1>
+    
     <img class="lighto" src="/assets/light.gif">
     <img class="lighto-on" src="/assets/light-on.gif">
+    <div class="option-chart">
+        <question>¿Qué harás?</question>
+        <br><br>
+        <div class="option option1">Seguir el rastro</div>
+        <div class="option option2">Seguir mi propio camino</div>
+    </div>
 
 <script>
+    var count = 0;
+    var msgs = [];
+    var y = $("h1 span span").text().length;
+    var st;
+
+
+    function animate() {
+        console.log(count,st,msgs);
         $('h1 .letters').each(function(){
         $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter' data-letter='$&'>$&</span>"));
         });
-    function animate() {
-
 
         anime.timeline(
             {loop: false}
@@ -198,33 +213,117 @@ animation: fadeIn ease 20s;
         
         // 45.3714 * $("h1 span span").text().length - 0.869511
         //(0.000300831 * Math.pow()) + (45.3373 *)  + 0.0333779 
-        let x = $("h1 span span").text().length;
+        var x = $("h1 span span").text().length;
         setTimeout(() => { $(".lighto-on").css("opacity", "1"); },  35.2083 * x + 392.857  );
         setTimeout(() => { $("question").css("opacity", "1"); },  35.2083 * x + 592.857  );
         setTimeout(() => { $(".option1").css("opacity", "1"); },  35.2083 * x + 1192.857  );
         setTimeout(() => { $(".option2").css("opacity", "1"); },  35.2083 * x + 1892.857  );
     }
-
+    
+    
     animate();
-    var count = 0;
 
-    var msgs = [
-        'En contrucción',
-        ];
 
-    $(document).click(() => {
+    $('.option1').click(() => {
+        if(count == 0) {
+            st = 1;
+
+            msgs.push('Una luz que parece provenir de una rosa blanca se encuntra flotando ante ti y te alumbra');
+            
+            setTimeout(() => { 
+                $('.option1').html('Intento acapararla para mí');
+                $('.option2').html('La examino y estudio desde la distancia');
+            },  35.2083 * y + 392.857  );
+            
+            trigger_changes();
+        } else if(count == 1) {
+            if(st == 1) /*rosa*/ {
+                msgs.push('La luz de la rosa se apaga de golpe y sientes como si el suelo bajo tuya desaparece');
+                msgs.push('Caes y caes hasta que un mundo nuevo se abre ante tus ojos');
+
+                setTimeout(() => { 
+                $('question').hide();
+                $('.option1').html('Continuar').attr('onClick', 'trigger_changes();');
+                $('.option2').hide();
+                },  35.2083 * y + 392.857  );
+
+                trigger_changes();
+            }
+
+            if(st == 2) /*ojos*/ {
+                msgs.push('Escuchas un estrepitoso sonido que hace desaparecer a quienes te acechan');
+                msgs.push('Sientes como si flotaras en agua pero no te notas mojado');
+                msgs.push('En elmomento en que sientes un suelo firme un mundo nuevo se abre ante tus ojos');
+                
+                setTimeout(() => { 
+                $('question').hide();
+                $('.option1').html('Continuar').attr('onClick', 'trigger_changes();');
+                $('.option2').hide();
+                },  35.2083 * y + 392.857  );
+
+                trigger_changes();
+            }
+        }
+
+        
+    });
+
+    $('.option2').click(() => {
+        if(count == 0) {
+            st = 2;
+            msgs.push('Una horda de ojos te acechan en la oscuridad cerrándote un cerco');
+        
+            setTimeout(() => { 
+                $('.option1').html('Me hago bolita lamentando mi elección');
+                $('.option2').html('Los encaro y embisto contra ellos en un desesperado movimiento');
+            },  35.2083 * y + 392.857  );
+
+            trigger_changes();
+        } else if(count == 1) {
+            if(st == 1) /*rosa*/ {
+                msgs.push('La intensidad de luz de la rosa se expande hasta cegarte');
+                msgs.push('Cuando abres los ojos un mundo nuevo se abre ante ti');
+
+                setTimeout(() => { 
+                $('question').hide();
+                $('.option1').html('Continuar').attr('onClick', 'trigger_changes();');
+                $('.option2').hide();
+            },  35.2083 * y + 392.857  );
+
+                trigger_changes();
+            }
+
+            if(st == 2) /*ojos*/ {
+                msgs.push('Quienes te acechan se lanzan sobre ti y te aplastan haciendo una mantaña');
+                msgs.push('Sientes como te consumen pero justo entonces notas un estallido que los ahuyenta y te desmayas');
+                msgs.push('Al despertar un mundo nuevo se abre ante ti');
+
+                setTimeout(() => { 
+                $('question').hide();
+                $('.option1').html('Continuar').attr('onClick', 'trigger_changes();');
+                $('.option2').hide();
+                },  35.2083 * y + 392.857  );
+
+                trigger_changes();
+            }
+        }
+        
+    });
+
+
+
+    function trigger_changes() {
         $(".lighto-on").css("opacity", "0");
+        $("question").css("opacity", "0");
+        $(".option").css("opacity", "0");
 
 
         if(count != msgs.length) {
-            $('h1 span span').html(msgs[count]); 
-            count++;
+            $('h1 span span').html(msgs[count]); count++;
             animate();
-        } else {
-            window.location.replace("/home");
-        }
+        } else window.location.replace("/home");
+    }
 
-    });
 </script>
 </body>
 </html>
