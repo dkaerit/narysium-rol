@@ -59,6 +59,38 @@ animation: fadeIn ease 20s;
     transition: 0.6s ease-in;
     }
 
+    .option-chart {
+        position: absolute;
+        left: 50%;
+        bottom: 0%;
+        letter-spacing: 1px;
+        transform: translate(-50%, 200%);
+        z-index: -1;
+        width: 80%;
+        transition: 1s;
+        filter: blur(0.4px);
+    }
+
+    question {
+        transition: 1s;
+        opacity: 0;
+    }
+    .option {
+        transition: 1s;
+        opacity: 0;
+        padding: 10px;
+        margin: 5px;
+        transition: 0.2s ease-in;
+    }
+    .option:hover {
+        padding: 10px;
+        margin: 5px;
+        background: #fff;
+        padding: 10px;
+        color: #000;
+        transition: 0.4s ease-in;
+    }
+
     body { 
     background-color : #030303; 
     height: 100vh;
@@ -108,18 +140,24 @@ animation: fadeIn ease 20s;
 <body>
     <h1>
       <span class="text-wrapper">
-            <span class="letters">Ves un rastro de pétalos ¿Qué haces?</span>
+            <span class="letters">Ves un rastro de pétalos</span>
       </span>
+      <div class="option-chart">
+          <question>¿Qué harás?</question>
+          <br><br>
+          <div class="option option1">Seguir el rastro</div>
+          <div class="option option2">Seguir mi propio camino</div>
+      </div>
     </h1>
     <img class="lighto" src="/assets/light.gif">
     <img class="lighto-on" src="/assets/light-on.gif">
 
 <script>
-
-    function animate() {
         $('h1 .letters').each(function(){
         $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter' data-letter='$&'>$&</span>"));
         });
+    function animate() {
+
 
         anime.timeline(
             {loop: false}
@@ -162,6 +200,9 @@ animation: fadeIn ease 20s;
         //(0.000300831 * Math.pow()) + (45.3373 *)  + 0.0333779 
         let x = $("h1 span span").text().length;
         setTimeout(() => { $(".lighto-on").css("opacity", "1"); },  35.2083 * x + 392.857  );
+        setTimeout(() => { $("question").css("opacity", "1"); },  35.2083 * x + 592.857  );
+        setTimeout(() => { $(".option1").css("opacity", "1"); },  35.2083 * x + 1192.857  );
+        setTimeout(() => { $(".option2").css("opacity", "1"); },  35.2083 * x + 1892.857  );
     }
 
     animate();
