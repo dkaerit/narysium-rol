@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-            <% Object.values(members).map((ix,it) => { %>
+            <% if(members) Object.values(members).map((ix,it) => { %>
                 <tr>
                     <td><%= ix["name"] %></td>
                     <% if(fcs[ix["name"]]) { %>

@@ -39,7 +39,7 @@ router.get('/normas', (req, res) => {
 router.get('/userlist', (req, res) => {
     db.ref('members').on('value', snap => {
         var members = snap.val();
-        db.ref('faceclaims').on('value', snap => {
+        db.ref('faceclaims').once('value', snap => {
             var fcs = snap.val();
             res.render('userlist.html', {"members": members, "fcs": fcs});
         });
