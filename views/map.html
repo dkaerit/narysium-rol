@@ -17,23 +17,30 @@
             border: 7px solid #04070a;
             z-index: 1;
             box-shadow: 0px 0px 8px #1f5177;
-            position: relative;
+            position: absolute;
             transform: translate(-50%, -50%);
             border-radius: 100%;
+            cursor: pointer;
+        }
+
+        .point:active {
+            width: 100px;
+            height: 100px;
+            border-radius: 0px;
         }
     </style>
 </head>
 <body>
     <%- include(`./layouts/navbar.html`) %>
     <div class="map">
-        <div class="point" style="top: 19%; left: 51%"></div>
-        <div class="point" style="top: 41%; left: 54%"></div>
-        <div class="point" style="top: 39%; left: 36%"></div>
-        <div class="point" style="top: 67%; left: 48%"></div>
-        <div class="point" style="top: 43%; left: 55%"></div>
-        <div class="point" style="top: 30%; left: 73%"></div>
-        <div class="point" style="top: 68%; left: 66%"></div>
-        <div class="point" style="top: 73%; left: 26%"></div>
+        <div class="point" style="top: 12em;left: 44em;"></div>
+        <div class="point" style="top: 34em;left: 47em;"></div>
+        <div class="point" style="top: 27.5em;left: 31em;"></div>
+        <div class="point" style="top: 47em;left: 41em;"></div>
+        <div class="point" style="top: 53em;left: 58em;"></div>
+        <div class="point" style="top: 27em;left: 62em;"></div>
+        <div class="point" style="top: 28em;left: 46em;"></div>
+        <div class="point" style="top: 58em;left: 23em;"></div>
     </div>
 </body>
 </html>

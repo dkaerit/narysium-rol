@@ -8,6 +8,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <style>
     .fade-in {
@@ -143,6 +145,14 @@ animation: fadeIn ease 20s;
         color: #000!important;
         transition: 0.4s ease-in;
     }
+
+    .fa-forward {
+        color: #fff;
+        transform: translate(0%, 65px);
+        border: 1px solid #fff;
+        padding: 10px;
+        border-radius: 100%;
+    }
     </style>
 </head>
 <body>
@@ -160,6 +170,7 @@ animation: fadeIn ease 20s;
         <div class="option option1">Seguir el rastro</div>
         <div class="option option2">Seguir mi propio camino</div>
     </div>
+    <center><a href="/home"><i class="fas fa-forward"></i></a></center>
 
 <script>
     var count = 0;
