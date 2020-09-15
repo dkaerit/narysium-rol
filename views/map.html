@@ -37,17 +37,22 @@
             box-shadow: none;
             border: 16px solid #000;
         }
+
+        .bloqinfo {
+            width: 100%;
+            position: fixed;
+            background: #fff;
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
     <%- include(`./layouts/navbar.html`) %>
-    <div class="container">
-        <div class="row">
-            <div class="wrapper">
-                <div class="inner_wrapper"></div>
-            </div>
-        </div>
+
+    <div class="bloqinfo">
+        <div class="inner_wrapper">dfdgd</div>
     </div>
+
     <div class="map">
         <div class="point" style="top: 12em;left: 44em;">
         <img src=""></img>
