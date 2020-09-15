@@ -39,10 +39,13 @@
         }
 
         .bloqinfo {
-            width: 100%;
+            width: 500px;
+            height: 100%;
             position: fixed;
             background: #fff;
             z-index: 2;
+            transform: translateX(-500px);
+            transition: 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -50,7 +53,8 @@
     <%- include(`./layouts/navbar.html`) %>
 
     <div class="bloqinfo">
-        <div class="inner_wrapper">dfdgd</div>
+        <img class="scenerie" src=""><img>
+        <div class="inner_wrapper"></div>
     </div>
 
     <div class="map">
@@ -71,6 +75,15 @@
     
 </body>
 <script defer>
+    var flag = 0;
+    $('.point').click(() => {
+        (flag)?flag = 0:flag = 1;
+        console.log(flag);
+        if(flag) $('.bloqinfo').css('transform', 'translateX(0px)');
+        else     $('.bloqinfo').css('transform', 'translateX(-500px)');
+    });
+    
+    
 </script>
 </html>
     
