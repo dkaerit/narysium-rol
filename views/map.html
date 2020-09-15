@@ -12,6 +12,7 @@
             height: 1168px;
             background-image: url(/assets/Narysium-colored.png);
             background-size: cover;
+            position: absolute;
         }
 
         .point {
@@ -25,20 +26,34 @@
             transform: translate(-50%, -50%);
             border-radius: 100%;
             cursor: pointer;
+            transition: 0.3s ease-in-out;
         }
 
-        .point:active {
-            width: 100px;
-            height: 100px;
+        .square {
+            background: #fff;
+            width: 300px;
+            height: 300px;
             border-radius: 0px;
             box-shadow: none;
+            border: 16px solid #000;
         }
     </style>
 </head>
 <body>
     <%- include(`./layouts/navbar.html`) %>
+    <div class="container">
+        <div class="row">
+            <div class="wrapper">
+                <div class="inner_wrapper"></div>
+            </div>
+        </div>
+    </div>
     <div class="map">
-        <div class="point" style="top: 12em;left: 44em;"></div>
+        <div class="point" style="top: 12em;left: 44em;">
+        <img src=""></img>
+        
+        
+    </div>
         <div class="point" style="top: 34em;left: 47em;"></div>
         <div class="point" style="top: 27.5em;left: 31em;"></div>
         <div class="point" style="top: 47em;left: 41em;"></div>
@@ -47,7 +62,11 @@
         <div class="point" style="top: 28em;left: 46em;"></div>
         <div class="point" style="top: 58em;left: 23em;"></div>
     </div>
+
+    
 </body>
+<script defer>
+</script>
 </html>
     
 
