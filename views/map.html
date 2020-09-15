@@ -3,16 +3,40 @@
 <head>
     <%- include(`./layouts/inner_head.html`) %>
     <style>
+        h2 {
+            font-family: 'Biryani', sans-serif;
+            text-align: left;
+            text-transform: uppercase;
+            padding-bottom: 15px;
+        }
+
         body {
             background: #04080a;
             background-image: none;
         }
+
+        #overlay {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            bottom: 0;
+            background: black;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(6px);
+            cursor: pointer;
+            opacity: 0;
+            transition: 1s;
+        }
+
         .map {
             width: 1500px;
             height: 1168px;
             background-image: url(/assets/Narysium-colored.png);
             background-size: cover;
             position: absolute;
+            z-index: 1;
         }
 
         .point {
@@ -42,48 +66,148 @@
             width: 500px;
             height: 100%;
             position: fixed;
-            background: #fff;
-            z-index: 2;
+            background: #171a21;
+            z-index: 3;
             transform: translateX(-500px);
             transition: 0.5s ease-in-out;
+            color: #ffffffd1;
+            overflow-y: scroll;
+        }
+
+        .bloqinfo::-webkit-scrollbar {
+        border-radius: 5px;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .bloqinfo::-webkit-scrollbar-track {}
+
+        .bloqinfo::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .bloqinfo::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .bloqinfo::-webkit-scrollbar-thumb:active {
+        background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .here {
+            box-shadow: 0px 0px 8px #1f4277;
+            border: 7px solid #08162b;
         }
     </style>
 </head>
 <body>
     <%- include(`./layouts/navbar.html`) %>
-
+    <div id="overlay"></div>
     <div class="bloqinfo">
-        <img class="scenerie" src=""><img>
+        <img class="scenerie"><img>
         <div class="inner_wrapper"></div>
     </div>
 
     <div class="map">
-        <div class="point" style="top: 12em;left: 44em;">
-        <img src=""></img>
-        
-        
-    </div>
-        <div class="point" style="top: 34em;left: 47em;"></div>
-        <div class="point" style="top: 27.5em;left: 31em;"></div>
-        <div class="point" style="top: 47em;left: 41em;"></div>
-        <div class="point" style="top: 53em;left: 58em;"></div>
-        <div class="point" style="top: 27em;left: 62em;"></div>
-        <div class="point" style="top: 28em;left: 46em;"></div>
-        <div class="point" style="top: 58em;left: 23em;"></div>
+        <div class="point" value="ul_gurd" style="top: 12em;left: 44em;"></div>
+        <div class="point" value="arcadia" style="top: 33em;left: 48em;"></div>
+        <div class="point here" value="academia_magna" style="top: 28em;left: 46em;"></div>
+        <div class="point" value="keldar" style="top: 27.5em;left: 31em;"></div>
+        <div class="point" value="zion" style="top: 47em;left: 41em;"></div>
+        <div class="point" value="okpara" style="top: 53em;left: 58em;"></div>
+        <div class="point" value="estaea" style="top: 27em;left: 62em;"></div>
+        <div class="point" value="mystior" style="top: 55em;left: 29em;"></div>
+        <div class="point" value="scelyndr" style="top: 18em;left: 69em;"></div>
     </div>
 
     
 </body>
 <script defer>
-    var flag = 0;
     $('.point').click(() => {
-        (flag)?flag = 0:flag = 1;
-        console.log(flag);
-        if(flag) $('.bloqinfo').css('transform', 'translateX(0px)');
-        else     $('.bloqinfo').css('transform', 'translateX(-500px)');
+        $('#overlay').css({'z-index': '2', 'opacity': '1'});
+        $('.bloqinfo').css('transform', 'translateX(0px)');
+    });
+
+    $('#overlay').click(() => {
+        $('#overlay').css({'z-index': '-1', 'opacity': '0'});
+        $('.bloqinfo').css('transform', 'translateX(-500px)');
+    });
+
+    $( "div[value='mystior']" ).click(() => {
+        $('.scenerie').attr('src', '/assets/lugares/mystior.png');
+        $('.inner_wrapper').html(`
+            <h2>Mystior</h2>
+        `);
+    });
+
+    $( "div[value='arcadia']" ).click(() => {
+        $('.scenerie').attr('src', '/assets/lugares/arcadia.png');
+        $('.inner_wrapper').html(`
+            <h2>Arcadia</h2>
+        `);
+    });
+
+    $( "div[value='estaea']" ).click(() => {
+        $('.scenerie').attr('src', '/assets/lugares/estaea.png');
+        $('.inner_wrapper').html(`
+            <h2>Estaea</h2>
+        `);
     });
     
+    $( "div[value='academia_magna']" ).click(() => {
+        $('.scenerie').attr('src', '/assets/lugares/academia_magna.png');
+        $('.inner_wrapper').html(`
+            <h2>Academia magna</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            
+                </p>
+        `);
+    });
+
+    $( "div[value='ul_gurd']" ).click(() => {
+        $('.scenerie').attr('src', '/assets/lugares/ul_gurd.png');
+        $('.inner_wrapper').html(`
+            <h2>Ul'gurd</h2>
+        `);
+    });
+
+    $( "div[value='okpara']" ).click(() => {
+        $('.scenerie').attr('src', '/assets/lugares/okpara.png');
+        $('.inner_wrapper').html(`
+            <h2>Okpara</h2>
+        `);
+    });
+
+    $( "div[value='keldar']" ).click(() => {
+        $('.scenerie').attr('src', '/assets/lugares/keldar.png');
+        $('.inner_wrapper').html(`
+            <h2>Keldar</h2>
+        `);
+    });
+
+    $( "div[value='zion']" ).click(() => {
+        $('.scenerie').attr('src', '/assets/lugares/zion.png');
+        $('.inner_wrapper').html(`
+            <h2>Zion</h2>
+        `);
+    });
     
+    $( "div[value='scelyndr']" ).click(() => {
+        $('.scenerie').attr('src', '/assets/lugares/scelyndr.png');
+        $('.inner_wrapper').html(`
+            <h2>Scelyndr</h2>
+        `);
+    });
+
 </script>
 </html>
     
