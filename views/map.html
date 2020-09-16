@@ -134,7 +134,10 @@
     
 </body>
 <script defer>
-    alert("Actualmente sólo hay información para la academia magna, pues es el lugar donde se centra todo el fake en principio");
+    $( window ).load(function() {
+        alert("Actualmente sólo hay información para la academia magna, pues es el lugar donde se centra todo el fake en principio");
+    });
+    
     $('.point').click(() => {
         $('#overlay').css({'z-index': '2', 'opacity': '1'});
         $('.bloqinfo').css('transform', 'translateX(0px)');
