@@ -68,7 +68,7 @@ router.get('/statususer', (req, res) => {
             "status": is_active
         };
 
-        db.ref('faceclaims').once('value', snap => {
+        /*db.ref('faceclaims').once('value', snap => {
             var fcs = snap.val();
 
             if(!fcs[it["screen_name"]]) {
@@ -80,7 +80,7 @@ router.get('/statususer', (req, res) => {
                     "rango": ""
                 }});
             }
-        })
+        })*/
         /*
         if(db.ref('faceclaims')[!it["screen_name"]]) {
 
