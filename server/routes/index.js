@@ -43,7 +43,6 @@ router.get('/userlist', (req, res) => {
             var fcs = snap.val();
             db.ref('datos').once('value', snap => {
             var datos = snap.val();
-            console.log(datos["neurospastum"]);
             res.render('userlist.html', {"members": members, "fcs": fcs, "datos": datos});
             });
             
@@ -69,14 +68,22 @@ router.get('/statususer', (req, res) => {
             "status": is_active
         };
 
-        console.log(it["screen_name"]);
+        db.ref('faceclaims').once('value', snap => {
+            var fcs = snap.val();
+
+            if(!fcs[it["screen_name"]]) {
+                //console.log(fcs[it["screen_name"]]);
+                //console.log("estoy dentro", it["screen_name"]);
+                db.ref('faceclaims').update({[it["screen_name"]]: ""});
+                db.ref('datos').update({[it["screen_name"]]: {
+                    "hab": "",
+                    "rango": ""
+                }});
+            }
+        })
         /*
         if(db.ref('faceclaims')[!it["screen_name"]]) {
-            db.ref('faceclaims').set({[it["screen_name"]]: ""});
-            db.ref('datos').set({[it["screen_name"]]: {
-                "hab": "",
-                "rango": ""
-            }});
+
         } 
         */
     });
