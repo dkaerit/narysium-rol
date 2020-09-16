@@ -1,6 +1,6 @@
 <%- include(`./partials/top-part.html`) %>
     <h1>Lista de miembros</h1>
-    <center><div class="button bactualizar">Actualizar</div></center><br>
+    <!--<center><div class="button bactualizar">Actualizar</div></center><br>-->
     <div id="memberlist">
         
         <table id="example" class="table table-bordered" cellspacing="0">
@@ -45,9 +45,9 @@
     </div>
     
     <script defer>
-    $(".bactualizar").click(() => {
+    /*$(".bactualizar").click(() => {
         fetch('/statususer');
-    });  
+    });*/  
     $(document).ready(() => {
         $('#example').DataTable({ 
             "language": { 
