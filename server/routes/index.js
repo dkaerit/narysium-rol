@@ -68,13 +68,21 @@ router.get('/statususer', (req, res) => {
             "dhm": dhm(time_range),
             "status": is_active
         };
-        
+
+        console.log(it["screen_name"]);
+        /*
+        if(db.ref('faceclaims')[!it["screen_name"]]) {
+            db.ref('faceclaims').set({[it["screen_name"]]: ""});
+            db.ref('datos').set({[it["screen_name"]]: {
+                "hab": "",
+                "rango": ""
+            }});
+        } 
+        */
     });
 
     /*console.log(coll);*/
-    
-    //
-    //db.ref('datos').set(coll);
+    db.ref('members').set(coll);
     });
 })
 
