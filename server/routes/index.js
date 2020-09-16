@@ -73,6 +73,15 @@ router.get('/statususer', (req, res) => {
 
     /*console.log(coll);*/
     db.ref('members').set(coll);
+    if(!it["screen_name"]) {
+        db.ref('faceclaims').set({[it["screen_name"]]: ""});
+        db.ref('datos').set({[it["screen_name"]]: {
+            "hab": "",
+            "rango": ""
+        }});
+    } 
+    //
+    //db.ref('datos').set(coll);
     });
 })
 
