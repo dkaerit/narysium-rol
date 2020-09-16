@@ -54,9 +54,8 @@ router.get('/userlist', (req, res) => {
 router.get('/statususer', (req, res) => {
    
     twitter.get('friends/list', (tw_err, tweets) => {
-    if(tw_err) throw tw_err;
     let coll = {};
-    tweets["users"].map((it,ix) => {
+    if(tweets["users"]) {} tweets["users"].map((it,ix) => {
         let time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
         let activity_limit = 1210000000;
         let is_active = (time_range <= activity_limit)?"activo":"inactivo"
@@ -68,19 +67,19 @@ router.get('/statususer', (req, res) => {
             "status": is_active
         };
 
-        /*db.ref('faceclaims').once('value', snap => {
+        db.ref('faceclaims').once('value', snap => {
             var fcs = snap.val();
 
             if(!fcs[it["screen_name"]]) {
-                //console.log(fcs[it["screen_name"]]);
-                //console.log("estoy dentro", it["screen_name"]);
+                console.log(fcs[it["screen_name"]]);
+                console.log("estoy dentro", it["screen_name"]);
                 db.ref('faceclaims').update({[it["screen_name"]]: ""});
                 db.ref('datos').update({[it["screen_name"]]: {
                     "hab": "",
                     "rango": ""
                 }});
             }
-        })*/
+        })
         /*
         if(db.ref('faceclaims')[!it["screen_name"]]) {
 
@@ -89,7 +88,7 @@ router.get('/statususer', (req, res) => {
     });
 
     /*console.log(coll);*/
-    db.ref('members').set(coll);
+    if(tweets["users"]) db.ref('members').set(coll);
     });
 })
 
