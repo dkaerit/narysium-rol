@@ -16,28 +16,32 @@
                 </thead>
                 <tbody>
                 <% if(members) Object.values(members).map((ix,it) => { %>
-                    <tr>
-                        <td><%= ix["name"] %></td>
-                        <% if(fcs[ix["name"]]) { %>
-                            <td><%= fcs[ix["name"]] %></td>
-                        <% } else { %>
-                            <td></td>  
-                        <% } %> 
-    
-                        <% if(datos[ix["name"]]) { %>
-                            <td><%= datos[ix["name"]]["rango"] %></td>
-                            <td><%= datos[ix["name"]]["hab"] %></td>
-                        <% } else { %>
-                            <td></td>  
-                            <td></td>
-                        <% } %> 
-                        
-                        <% if(ix["status"] == "activo") { %>
-                            <td style="background-color:#a9d8a9"><%= ix["dhm"] %> días</td>
-                        <% } else { %>
-                            <td style="background-color: #dac09c;"><%= ix["dhm"] %> días</td>
-                        <% } %>     
-                    </tr>
+                    
+                    <% if(ix["name"] != "narysiumact") { %>
+                        <tr>
+                            <td><%= ix["name"] %></td>
+                            <% if(fcs[ix["name"]]) { %>
+                                <td><%= fcs[ix["name"]] %></td>
+                            <% } else { %>
+                                <td></td>  
+                            <% } %> 
+        
+                            <% if( datos[ix["name"]] ) { %>
+                                <td><%= datos[ix["name"]]["rango"] %></td>
+                                <td><%= datos[ix["name"]]["hab"] %></td>
+                            <% } else { %>
+                                <td></td>  
+                                <td></td>
+                            <% } %> 
+                            
+                            <% if(ix["status"] == "activo") { %>
+                                <td style="background-color:#a9d8a9"><%= ix["dhm"] %> días</td>
+                            <% } else { %>
+                                <td style="background-color: #dac09c;"><%= ix["dhm"] %> días</td>
+                            <% } %>     
+                        </tr>
+                    <% } %>
+                    
                 <% }) %>  
                 </tbody>
             </table>
