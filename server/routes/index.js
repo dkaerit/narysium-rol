@@ -88,6 +88,7 @@ router.get('/userlist', (req, res) => {
     
 });
 
+/*
 router.get('/statususer', (req, res) => {
    
     twitter.get('friends/list', (tw_err, tweets) => {
@@ -117,17 +118,12 @@ router.get('/statususer', (req, res) => {
                 }});
             }
         })
-        /*
-        if(db.ref('faceclaims')[!it["screen_name"]]) {
 
-        } 
-        */
     });
 
-    /*console.log(coll);*/
     if(tweets["users"]) db.ref('members').set(coll);
     });
-})
+})*/
 
 // funciones auxiliares
 function dhm(ms){
