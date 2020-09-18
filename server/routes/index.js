@@ -88,43 +88,6 @@ router.get('/userlist', (req, res) => {
     
 });
 
-/*
-router.get('/statususer', (req, res) => {
-   
-    twitter.get('friends/list', (tw_err, tweets) => {
-    let coll = {};
-    if(tweets["users"]) tweets["users"].map((it,ix) => {
-        let time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
-        let activity_limit = 1210000000;
-        let is_active = (time_range <= activity_limit)?"activo":"inactivo"
-
-        coll[it["screen_name"]] = {
-            "id": it["id"],
-            "name": it["screen_name"],
-            "dhm": dhm(time_range),
-            "status": is_active
-        };
-
-        db.ref('faceclaims').once('value', snap => {
-            var fcs = snap.val();
-
-            if(!fcs[it["screen_name"]]) {
-                console.log(fcs[it["screen_name"]]);
-                console.log("estoy dentro", it["screen_name"]);
-                db.ref('faceclaims').update({[it["screen_name"]]: ""});
-                db.ref('datos').update({[it["screen_name"]]: {
-                    "hab": "",
-                    "rango": ""
-                }});
-            }
-        })
-
-    });
-
-    if(tweets["users"]) db.ref('members').set(coll);
-    });
-})*/
-
 // funciones auxiliares
 function dhm(ms){
     days = Math.floor(ms / (24*60*60*1000));
