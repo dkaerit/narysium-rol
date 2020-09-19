@@ -46,7 +46,7 @@ router.get('/userlist', (req, res) => {
         let coll = {};
         if(tweets["users"]) tweets["users"].map((it,ix) => {
             let time_range = 1210000000;
-            if(it["status"]) let time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
+            if(it["status"]) time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
             let activity_limit = 1210000000;
             let is_active = (time_range <= activity_limit)?"activo":"inactivo"
     
