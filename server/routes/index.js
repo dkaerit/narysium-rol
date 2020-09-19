@@ -58,19 +58,21 @@ router.get('/userlist', (req, res) => {
     
             db.ref('faceclaims').once('value', snap => {
                 var fcs = snap.val();
-                db.ref('members').once('value', snap => {
+
+                if(!fcs[it["screen_name"]]) {
+                    console.log(fcs[it["screen_name"]]);
+                    console.log("estoy dentro", it["screen_name"]);
+                    db.ref('faceclaims').update({[it["screen_name"]]: ""});
+                    db.ref('datos').update({[it["screen_name"]]: {
+                        "hab": "",
+                        "rango": ""
+                    }});
+                }
+                /*db.ref('members').once('value', snap => {
                     var members1 = snap.val();
 
-                    if(!fcs[it["screen_name"]]) {
-                        console.log(fcs[it["screen_name"]]);
-                        console.log("estoy dentro", it["screen_name"]);
-                        db.ref('faceclaims').update({[it["screen_name"]]: ""});
-                        if(!members1[it["screen_name"]]) db.ref('datos').update({[it["screen_name"]]: {
-                            "hab": "",
-                            "rango": ""
-                        }});
-                    }
-                });
+                    
+                });*/
                 
             })
         });
