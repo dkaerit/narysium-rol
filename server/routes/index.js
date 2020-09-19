@@ -41,6 +41,7 @@ router.get('/userlist', (req, res) => {
     
 
 
+    // hola
     twitter.get('friends/list', (tw_err, tweets) => {
         let coll = {};
         if(tweets["users"]) tweets["users"].map((it,ix) => {
