@@ -20,6 +20,10 @@ router.get('/map', (req, res) => {
     res.render('map.html');
 });
 
+router.get('/guides', (req, res) => {
+    res.render('guides.html');
+});
+
 router.get('/home', (req, res) => {
     res.render('index.html');
 });
