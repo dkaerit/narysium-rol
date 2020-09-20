@@ -45,7 +45,20 @@
         <li>Tirada normal</li>
     </ul>
     Pero de momento olvidémonos de todo esto. En primer lugar, imagina que quieres tirar 2 dados de 20 caras, o 1 dado de 8 caras, pues dichas tiradas se harían de la siguiente manera.
-    <img src="/assets/dads/ej-dados-1.png">
+    <center><img class="dados" src="/assets/dados/ej-dados-1.png"></center>
+    Pero además puedes hacer más cosas con los dados que sólo tirar una cantidad de ellos, y es que si tiras varios puedes hacer que el resultado generado sea el mayor de todos los resultados dados. Veámoslo con un ejemplo.
+    <br><br>
+    Supongamos que quiero tirar 3 dados de 6 caras y quedarme con el resultado mayor de esas 3 tiradas, esto es lo que llamamos <b>tirada con ventaja</b> y eso se haría de la siguiente manera:
+    <center><img class="dados" src="/assets/dados/ej-dados-2.png"></center>
+    Tambien podemos hacer el caso contrario, que sería quedarnos con el número menor, conocido como <b>Tirada de desventaja</b>
+    <center><img class="dados" src="/assets/dados/ej-dados-3.png"></center>
+    Si no especificamos ni up ni low cuando vayamos a tirar varios dados, se trata de una <b>tirada normal</b>, y el resultdo final es la suma de todos ellos
+    <center><img class="dados" src="/assets/dados/ej-dados-4.png"></center>
+
+    <br>Pero esto no estodo, hay algo más que podemos que hacer con los dados y es añadirle un <b>modificador</b>, esto es que podemos añadirle o restarle una cantidad al resultado final, normalmente será por motivos inerentes al personaje, pero como aún no tenemos un sistema construído es bueno comentarlo para que sepan como utilizarlo. Esto sería varios ejemplos.
+    <center><img class="dados" src="/assets/dados/ej-dados-5.png"></center>
+    <center><img class="dados" src="/assets/dados/ej-dados-6.png"></center>
+
 </p>
 <!-- a -->
 <%- include(`./partials/bot-part.html`) %>
