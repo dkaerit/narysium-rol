@@ -47,7 +47,7 @@ router.get('/userlist', (req, res) => {
 
     // hola
     twitter.get('friends/list', (tw_err, tweets) => {
-        db.ref('members').push({"0_dummy": ""});
+        db.ref('members').se({"0_dummy": ""});
         db.ref('members').once('value', snap => {
             var coll = snap.val();
             //
