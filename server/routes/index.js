@@ -47,12 +47,14 @@ router.get('/userlist', (req, res) => {
         //db.ref('members').once('value', snap => {
             var coll = {};
             //
-            if(tweets["users"]) tweets["users"].map((it,ix) => {
+            tweets["users"].map((it,ix) => {
                 let time_range = 1210000000;
                 if(it["status"]) time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
                 let activity_limit = 1210000000;
                 let is_active = (time_range <= activity_limit)?"activo":"inactivo";
-        
+                
+                console.log(it["screen_name"]);
+
                 coll[it["screen_name"]] = {
                     "id": it["id"],
                     "name": it["screen_name"],
@@ -76,7 +78,7 @@ router.get('/userlist', (req, res) => {
                     
                 })
             });
-            else alert("error! users está vacío");
+            //else console.log("Superado el límite");
 
             if(tweets["users"]) db.ref('members').update(coll);
         //});
