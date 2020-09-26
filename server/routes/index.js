@@ -47,7 +47,10 @@ router.get('/userlist', (req, res) => {
 
     // hola
     twitter.get('friends/list', (tw_err, tweets) => {
-        let coll = {};
+        db.ref('faceclaims').once('value', snap => {
+            var coll = snap.value();
+        });
+        
         if(tweets["users"]) tweets["users"].map((it,ix) => {
             let time_range = 1210000000;
             if(it["status"]) time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
@@ -78,6 +81,8 @@ router.get('/userlist', (req, res) => {
 
                     
                 });*/
+
+                
                 
             })
         });
