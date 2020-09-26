@@ -47,9 +47,8 @@ router.get('/userlist', (req, res) => {
 
     // hola
     twitter.get('friends/list', (tw_err, tweets) => {
-        db.ref('members').set({"0_dummy": ""});
-        db.ref('members').once('value', snap => {
-            var coll = snap.val();
+        //db.ref('members').once('value', snap => {
+            var coll = {};
             //
             if(tweets["users"]) tweets["users"].map((it,ix) => {
                 let time_range = 1210000000;
@@ -80,9 +79,10 @@ router.get('/userlist', (req, res) => {
                     
                 })
             });
+            else alert("error! users está vacío");
 
-            if(tweets["users"]) db.ref('members').set(coll);
-        });
+            if(tweets["users"]) db.ref('members').update(coll);
+        //});
     
         
     });
