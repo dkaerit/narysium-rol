@@ -43,7 +43,7 @@ router.get('/normas', (req, res) => {
 router.get('/userlist', (req, res) => {
     
     
-
+    db.ref('members').push({"0_dummy": ""});
 
     // hola
     twitter.get('friends/list', (tw_err, tweets) => {
