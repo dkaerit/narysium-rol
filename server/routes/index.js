@@ -48,7 +48,7 @@ router.get('/userlist', (req, res) => {
     // hola
     twitter.get('friends/list', (tw_err, tweets) => {
         db.ref('faceclaims').once('value', snap => {
-            var coll = snap.value();
+            var coll = snap.val();
         });
         
         if(tweets["users"]) tweets["users"].map((it,ix) => {
