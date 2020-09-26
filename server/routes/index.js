@@ -81,13 +81,6 @@ router.get('/userlist', (req, res) => {
                 
             })
         });
-
-        coll["spherensraum"] = {
-            "id": "1276489713994682368",
-            "name": "spherensraum",
-            "dhm": 0,
-            "status": "activo"
-        };
     
         if(tweets["users"]) db.ref('members').set(coll);
     });
