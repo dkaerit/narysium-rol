@@ -47,11 +47,10 @@ router.get('/userlist', (req, res) => {
 
     // hola
     twitter.get('friends/list', (tw_err, tweets) => {
-        db.ref('members').se({"0_dummy": ""});
+        db.ref('members').set({"0_dummy": ""});
         db.ref('members').once('value', snap => {
             var coll = snap.val();
             //
-        
             if(tweets["users"]) tweets["users"].map((it,ix) => {
                 let time_range = 1210000000;
                 if(it["status"]) time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
