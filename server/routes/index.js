@@ -62,7 +62,7 @@ router.get('/userlist', (req, res) => {
                 "name": it["screen_name"],
                 "dhm": dhm(time_range),
                 "status": is_active
-            };
+            }; //
     
             db.ref('faceclaims').once('value', snap => {
                 var fcs = snap.val();
