@@ -42,10 +42,7 @@ router.get('/normas', (req, res) => {
 
 router.get('/userlist', (req, res) => {
     
-    
-    
 
-    // hola
     twitter.get('friends/list', (tw_err, tweets) => {
         //db.ref('members').once('value', snap => {
             var coll = {};
