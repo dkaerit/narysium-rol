@@ -43,10 +43,11 @@ router.get('/normas', (req, res) => {
 router.get('/userlist', (req, res) => {
     
     
-    db.ref('members').push({"0_dummy": ""});
+    
 
     // hola
     twitter.get('friends/list', (tw_err, tweets) => {
+        db.ref('members').push({"0_dummy": ""});
         db.ref('members').once('value', snap => {
             var coll = snap.val();
             //
@@ -76,12 +77,6 @@ router.get('/userlist', (req, res) => {
                             "rango": ""
                         }});
                     }
-                    /*db.ref('members').once('value', snap => {
-                        var members1 = snap.val();
-
-                        
-                    });*/
-
                     
                     
                 })
