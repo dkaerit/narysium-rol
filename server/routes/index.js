@@ -43,6 +43,15 @@ router.get('/normas', (req, res) => {
 router.get('/userlist', (req, res) => {
     
 
+
+
+    twitter.get('lists/members', { list_id: '1310003974473420801' },  function (err, data, response) {
+    console.log(data)
+    });
+
+
+
+
     twitter.get('friends/list', (tw_err, tweets) => {
         //db.ref('members').once('value', snap => {
             var coll = {};
@@ -53,7 +62,7 @@ router.get('/userlist', (req, res) => {
                 let activity_limit = 1210000000;
                 let is_active = (time_range <= activity_limit)?"activo":"inactivo";
                 
-                console.log(it["screen_name"]);
+                //console.log(it["screen_name"]);
 
                 coll[it["screen_name"]] = {
                     "id": it["id"],
