@@ -45,18 +45,23 @@ router.get('/userlist', (req, res) => {
 
 
 
-    twitter.get('lists/members', { list_id: '1310003974473420801' },  function (err, data, response) {
-    console.log(data)
-    });
+   /*twitter.get('lists/members', { list_id: '1310003974473420801' },  function getData(err, data, response) {
+        
+
+        data["users"].map((it,ix) => {
+            console.log(it["screen_name"]);
+        });
+        if(data['next_cursor'] > 0) twitter.get('lists/members', { list_id: '1310003974473420801', cursor: data['next_cursor'] }, getData);
+    });*/
 
 
 
 
-    twitter.get('friends/list', (tw_err, tweets) => {
+    twitter.get('friends/list', function getFriends(tw_err, tweets) {
         //db.ref('members').once('value', snap => {
             var coll = {};
             //
-            tweets["users"].map((it,ix) => {
+            if(tweets["users"]) tweets["users"].map((it,ix) => {
                 let time_range = 1210000000;
                 if(it["status"]) time_range = Date.now() - Date.parse(it["status"]["created_at"]); // tiempo transcurrido desde su último twit
                 let activity_limit = 1210000000;
@@ -92,7 +97,7 @@ router.get('/userlist', (req, res) => {
             if(tweets["users"]) db.ref('members').update(coll);
         //});
     
-        
+    if(tweets['next_cursor'] > 0) twitter.get('friends/list', { cursor: tweets['next_cursor'] }, getFriends);    
     });
 
 
