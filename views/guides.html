@@ -60,6 +60,33 @@
     <center><img class="dados" src="/assets/dados/ej-dados-6.png"></center>
 
 </p>
+
+<div class="t2">Sistema de combate</div>
+<p>
+    La idea del sistema de combate será simple. Será un sistema “a tres toques” conocido por este nombre en rol. Funciona de la siguiente manera:
+    <br><br>
+    Cada contrincante narra un ataque de intenciones (lo que el personaje “intenta hacer”, muy distinto de “hacer”). Luego ambos se enfrentan tirando dados de 20 caras, y quien saque mayor número tiene éxito en su “intención”, teniendo el que sacó menos narrar su fracaso seguida de su siguiente intención, y quien sacase mayor número deberá narrar con éxito su primera intención seguida de su nueva intención de ataque.     
+    <ul>
+        <li>Gana el primero que llegue a 3 toques, los cuales sólo se aplican con una diferencia mayor o igual a 10 en los dados.</li>
+        <li>Aquel que saque menor número 3 veces seguidas, pierde automáticamente el combate. (hayan recibido toques o no)</li>
+        <li>Empatar dos 20: Ambos se hacen un toque.</li>
+        <li>Empatar cualquier número inferior a 20: Ambos narran un fracaso y ninguno recibe un toque.</li>
+    </ul>
+    Ejemplo:
+    <code>
+        PJ1: “narra su intención de ataque 1-1” → Tira dado, Resultado: 14
+        PJ2: “narra su intención de ataque 2-1” → Tira dado, Resultado: 7
+
+        No se hace ningún toque.
+
+        PJ1: “narra su éxito y su nueva intención de ataque 1-2” → Tira dado, Resultado: 4
+        PJ2: “narra su fracaso y su nueva intención de ataque 2-2” → Tira dado, Resultado: 17
+
+        PJ2 logra asestar un toque. 
+    </code>
+
+</p>
+
 <!-- a -->
 <%- include(`./partials/bot-part.html`) %>
 
