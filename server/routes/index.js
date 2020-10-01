@@ -40,6 +40,10 @@ router.get('/normas', (req, res) => {
     res.render('normas.html');
 });
 
+router.get('/dormitorios', (req, res) => {
+    res.render('dormitorios.html');
+});
+
 router.get('/userlist', (req, res) => {
     
 
