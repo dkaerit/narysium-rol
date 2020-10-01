@@ -32,8 +32,8 @@ router.get('/', (req, res) => {
     res.render('begin.html');
 });
 
-router.get('/journal', (req, res) => {
-    res.render('journal.html');
+router.get('/ficha', (req, res) => {
+    res.render('ficha.html');
 });
 
 router.get('/normas', (req, res) => {
