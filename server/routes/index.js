@@ -32,6 +32,10 @@ router.get('/', (req, res) => {
     res.render('begin.html');
 });
 
+router.get('/materias', (req, res) => {
+    res.render('materias.html');
+});
+
 router.get('/ficha', (req, res) => {
     res.render('ficha.html');
 });
