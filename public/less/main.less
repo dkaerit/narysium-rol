@@ -74,10 +74,26 @@ code {
     .header {height: 300px }
     .wrapper {border: 44px solid #040506; margin: 5% 0px;}
     h1 {line-height: 32px;}
+    .materiasPic {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        z-index: 4;
+        transition: 1s ease-in-out;
+    }
     .materiasPic:hover {
         position: fixed;
+        border: 10px solid #fff;
         width: 90%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
         z-index: 4;
+        transition: 1s ease-in-out;
     }
 }
 
