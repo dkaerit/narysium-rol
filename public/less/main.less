@@ -75,25 +75,14 @@ code {
     .wrapper {border: 44px solid #040506; margin: 5% 0px;}
     h1 {line-height: 32px;}
     .materiasPic {
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        z-index: 4;
-        transition: 1s ease-in-out;
+        padding: 50px;
+        transition: transform .2s; /* Animation */
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
     }
     .materiasPic:hover {
-        position: fixed;
-        border: 10px solid #fff;
-        width: 90%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        z-index: 4;
-        transition: 1s ease-in-out;
+        transform: scale(1.5);
     }
 }
 
