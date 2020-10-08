@@ -33,20 +33,6 @@ a:hover {
     font-family: system-ui;
 }
 
-
-@media (max-width: 750px) {
-    .header {height: 250px; }
-    .wrapper {border: 30px solid #040506; margin: 5% 0px;}
-    h1 {font-size: 23px;
-     line-height: 22px;
-    }
-
-    #example_paginate {
-        padding-top: 26px;
-    }
-
-}
-
 .dados {
     width: 70%!important;
     display: block;
@@ -60,6 +46,22 @@ code {
     margin: 20px;
 }
 
+
+/* Tablets */
+@media (max-width: 750px) {
+    .header {height: 250px; }
+    .wrapper {border: 30px solid #040506; margin: 5% 0px;}
+    h1 {font-size: 23px;
+     line-height: 22px;
+    }
+
+    #example_paginate {
+        padding-top: 26px;
+    }
+
+}
+
+/* Móviles */
 @media (max-width: 365px) {
     .header {height: 200px }
     .wrapper {border: 0px solid #040506; margin: 0px;}
@@ -67,10 +69,16 @@ code {
     .inner_wrapper {font-weight: 400!important}
 }
 
+/* PC */
 @media (min-width: 751px) {
     .header {height: 300px }
     .wrapper {border: 44px solid #040506; margin: 5% 0px;}
     h1 {line-height: 32px;}
+    .materiasPic:hover {
+        position: fixed;
+        width: 90%;
+        z-index: 4;
+    }
 }
 
 h1 {
