@@ -43,7 +43,7 @@
     <div class="buttonMat" id="nomin" style="background-color: #c77844">Nominación</div>
 </div>
 
-<div class="infoMat">Pulsa los botones para mostrar la descripción de cada materia.</div>
+<div class="infoMatBegin">Pulsa los botones para mostrar la descripción de cada materia.</div>
 
 
 <!--mat-->
@@ -151,26 +151,14 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script defer>
 
 $(".infoMat").hide();
 
 $(".buttonMat").on('click', event => {
     $(".infoMat").hide(500);
+    $(".infoMatBegin:visible").hide();
+    
     $(`div[value='${event.target.id}']`).show(500);
 });
 
