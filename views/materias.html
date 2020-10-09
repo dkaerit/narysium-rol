@@ -26,10 +26,6 @@
     display: flex;
     flex-wrap: wrap;
 }
-
-.infoMat {
-    transition: 0.5s;
-}
 </style>
 
 <div class="selectorMat">
@@ -131,9 +127,9 @@
 
 $(".infoMat").hide();
 
-$(".buttonMat").on('click transitioned', event => {
-    $(".infoMat").hide();
-    $(`div[value='${event.target.id}']`).show();
+$(".buttonMat").on('click', event => {
+    $(".infoMat").hide(500);
+    $(`div[value='${event.target.id}']`).show(500);
 });
 
 
