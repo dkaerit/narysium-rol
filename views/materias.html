@@ -123,8 +123,8 @@ $(".infoMat").hide();
 $(".buttonMat").on('click', event => {
     let mat = event.target.id;
     $(".infoMat").hide();
+    console.log(`#${mat}`);
     $(`#${mat}`).show();
-
 });
 
 
