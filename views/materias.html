@@ -59,9 +59,11 @@
 
 
 
+<div class="infoMat" value="hech">hech</div>
+<div class="infoMat" value="cmagic">cmagic</div>
+<div class="infoMat" value="runol">runol</div>
+<div class="infoMat" value="simp">simp</div>
 
-
-<div class="infoMat" value="">hola</div>
 <div class="t2">Hechicería</div>
 <p>Más fácil de comprender que el simpatismo, pero más dificil de dominar en la práctica. Un simpatista no requiere concentración a la hora de establecer sus vínculos en los intercambios de energía, pudiendo realizar vínculos simpáticos (lo que serían conjuros en hechicería) al mismo tiempo que se utilizan otras habilidades físicas.<br><br> Sin embargo, los hechiceros necesitan una alta concentración para mantener sus hechizos o encantamientos. <br><br>Es por esto que aquellos entregados al combate físico casi siempre se decantan por una combinación con el simpatismo, mientras que los hechiceros son más dados a la erudición, aunque no necesariamente siempre tenga que ser así.</p>
 <p>Para conjurar su magia, los hechiceros utilizan un recurso interno denominado "maná". Un recurso que, como la energía que maneja el simpatismo, no es infinito y puede llegar a consumirse. Tienen más fácil la labor de alterar los elementos en distintos medios como: Crear lluvias en mitad de una sequía, congelar cortinas de fuego sin pensar en disipar el calor como lo haría el simpatista, crear bolas de fuego en mitad de Ul'gurd. Sin embargo, el riesgo que supone gastar ese maná es más peligroso que en el simpatismo.</p>
@@ -119,7 +121,10 @@
 $(".infoMat").hide();
 
 $(".buttonMat").on('click', event => {
-    alert(event.target.id);
+    let mat = event.target.id;
+    $(".infoMat").hide();
+    $(`#${mat}`).show();
+
 });
 
 
