@@ -122,7 +122,7 @@ $(".infoMat").hide();
 
 $(".buttonMat").on('click', event => {
     $(".infoMat").hide();
-    $(event.target.id).show();
+    $(`div[value='${event.target.id}']`).show();
 });
 
 
