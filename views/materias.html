@@ -26,6 +26,10 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.infoMat {
+    transition: 0.5s;
+}
 </style>
 
 <div class="selectorMat">
@@ -43,6 +47,20 @@
     <div class="buttonMat" id="nomin" style="background-color: #c77844">Nominación</div>
 </div>
 
+<div class="infoMat" value="simp">Clica los botones para mostrar la descripción de cada materia.</div>
+<div class="infoMat" value="simp">hech</div>
+<div class="infoMat" value="hech">cmagic</div>
+<div class="infoMat" value="runol">runol</div>
+<div class="infoMat" value="artof">simp</div>
+<div class="infoMat" value="alqui">simp</div>
+<div class="infoMat" value="cmagic">simp</div>
+<div class="infoMat" value="herbol">simp</div>
+<div class="infoMat" value="exorc">simp</div>
+<div class="infoMat" value="histor">simp</div>
+<div class="infoMat" value="maref">simp</div>
+<div class="infoMat" value="mental">simp</div>
+<div class="infoMat" value="nomin">simp</div>
+
 <div class="t2">Simpatismo</div>
 <p>Manipula la materia a través de los vínculos inherentes en las cosas. Esto quiere decir que los magos basados en el simpatismo recurren a la energía de su entorno para realizar su magia, por eso dista de la hechicería donde se recurre a la propia energía para mutar la materia.</p>
 <p>Sin embargo, alterar la materia en ambos casos tiene un coste. Mientras los hechiceros consumen su maná interno, los simpatistas necesitan hacer un intercambio físico en las cosas. Por poner unos ejemplos:</p>
@@ -56,13 +74,6 @@
 <p>Como puedes comprobar, el límite de la Simpatía se encuentra en el entorno, si escaseas de los recursos necesarios en el entorno, por ejemplo, poca humedad, no podrás realizar simpatismo vinculado con el agua. En cuyo caso tendrías que recurrir al propio agua de tu cuerpo.</p>
 
 <p>No obstante, date cuenta que del mismo modo que los recursos en el ambiente se consumen para ese intercmbio de energía lo mismo pasa con los recursos del propio cuerpo, por lo que estos casos suelen ser la última baza. Gastar toda la humedad del cuerpo puede llegar a matar a su usuario por deshidratación, gastar tu calor te hará sufrir hipotermia, gastar el aire de tus pulmones, asfixia.   </p>
-
-
-
-<div class="infoMat" value="hech">hech</div>
-<div class="infoMat" value="cmagic">cmagic</div>
-<div class="infoMat" value="runol">runol</div>
-<div class="infoMat" value="simp">simp</div>
 
 <div class="t2">Hechicería</div>
 <p>Más fácil de comprender que el simpatismo, pero más dificil de dominar en la práctica. Un simpatista no requiere concentración a la hora de establecer sus vínculos en los intercambios de energía, pudiendo realizar vínculos simpáticos (lo que serían conjuros en hechicería) al mismo tiempo que se utilizan otras habilidades físicas.<br><br> Sin embargo, los hechiceros necesitan una alta concentración para mantener sus hechizos o encantamientos. <br><br>Es por esto que aquellos entregados al combate físico casi siempre se decantan por una combinación con el simpatismo, mientras que los hechiceros son más dados a la erudición, aunque no necesariamente siempre tenga que ser así.</p>
@@ -120,7 +131,7 @@
 
 $(".infoMat").hide();
 
-$(".buttonMat").on('click', event => {
+$(".buttonMat").on('click transitioned', event => {
     $(".infoMat").hide();
     $(`div[value='${event.target.id}']`).show();
 });
