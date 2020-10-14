@@ -1,0 +1,272 @@
+<div class='book'>  
+    <div id='page-1' class='page no-anim'>    
+      <div class='side-1' id='p1'>
+        <div class='content'>
+          <h1>Herbario</h1>
+          <p>
+            Page 1.
+          </p>
+        </div><!-- .content -->
+      </div><!-- .side-1 -->    
+      <div class='side-2' id='p2'>      
+        <div class='content'>
+          <p>
+                      Page 2 - foto.
+          </p>
+        </div><!-- .content -->
+      </div><!-- .side-2 -->
+    </div><!-- .page -->
+    
+    <div id='page-2' class='page no-anim'>    
+      <div class='side-1' id='p3'>
+        <div class='content'>
+          <h2>To Stop the Moon: The Shrine of Daring</h2>
+          <p>
+  The Shrine of Daring is found in the city of Vivec, in the Temple District, along the western wall of the High Fane, the great Temple of Vvardenfell. When you address the shrine, it is customary to leave behind a Potion of Rising Force. Suitable potions may be purchased from the Temple. Homemade potions are not acceptable.
+            </p>
+        </div><!-- .content -->
+      </div><!-- .side-1 -->    
+      <div class='side-2' id='p4'>      
+        <div class='content'>
+            <p>
+                Page 4 - foto.
+            </p>
+        </div><!-- .content -->
+      </div><!-- .side-2 -->
+    </div><!-- #page-2 -->
+    
+    <div id='page-3' class='page no-anim'>    
+      <div class='side-1' id='p5'>
+        <div class='content'>
+          <h2>The Puzzle Canal: The Shrine of Courtesy</h2>
+          <p>
+            In a battle with Mehrunes Dagon, Vivec gave his own silver longsword to the Daedra Lord rather than dishonor himself by fighting an unarmed foe. This so impressed the Dremora, the most honorable and chivalrous of Mehrunes Dagon's Daedric servants, that they now share a bond of respect and courtesy with the followers of the Tribunal, though we must never forget that they are our enemies.
+          </p>
+          <p>
+            The Shrine of Courtesy is found in the heart of the Puzzle Canal, a labyrinth beneath Lord Vivec's Palace in the city of Vivec. The journey though the Puzzle Canal can be confusing and it is suggested that common pilgrims carry a scroll of ALMSIVI Intervention in case they get lost. The Dremora Krazzt is found in the center of the Puzzle Canal, and will accept a plain silver longsword if spoken to with courtesy. After Krazzt accepts the sword, pilgrims must read the inscription on the triolith.
+          </p>
+        </div><!-- .content -->
+      </div><!-- .side-1 -->    
+      <div class='side-2' id='p6'>      
+        <div class='content'>
+            <p>
+                Page 6 - foto.
+            </p>
+        </div><!-- .content -->
+      </div><!-- .side-2 -->
+    </div><!-- #page-3 -->
+    
+    <div id='page-4' class='page no-anim'>    
+      <div class='side-1' id='p7'>
+        <div class='content'>
+          <h2>Koal Cave: The Shrine of Valor</h2>
+          <p>
+            Within the Koal Cave, Vivec fought a battle with Ruddy Man, the father of the Dreugh. When he defeated Ruddy Man, Vivec spared his life, on the condition that Ruddy Man and his children would give up their tough hides to serve as armor for the Dunmer.
+          </p>
+          <p>
+            The Shrine of Valor is inside the Koal Cave, a cavern on the seacoast west of the ancient stronghold Berandas and south of Gnisis. The cave mouth faces south, towards the sea, and is marked by a large natural arch of stone. The region is wilderness, and finding the cave mouth can be difficult. Dreugh within the cave itself are fearsome enemies; only experienced and capable adventurers should attempt to re-enact the epic battle with the dreugh in the cave. Dreugh wax may be bought at the Temple in Gnisis. When you address the shrine, it is customary to leave a portion of dreugh wax as a token of Vivec's victorious struggle with Ruddy Man.
+          </p>
+        </div><!-- .content -->
+      </div><!-- .side-1 -->    
+      <div class='side-2' id='p8'>      
+        <div class='content'>
+            <p>
+                Page 8 - foto.
+            </p>
+        </div><!-- .content -->
+      </div><!-- .side-2 -->
+    </div><!-- #page-4 -->
+  </div>
+
+  <style>
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	position: relative;
+}
+
+[class*="side"]::-webkit-scrollbar {
+	width: 4px;
+}
+[class*="side"]::-webkit-scrollbar-thumb {
+	background: #6e76a9;
+	border: 1px solid #0000001a;
+}
+[class*="side"]::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+[class*="side"]::selection {
+	background: #222;
+	color: white;
+}
+[class*="side"]::-moz-selection {
+	background: #222;
+	color: white;
+}
+
+.book * {
+	transform-style: preserve-3d; /* am i doing this wrong? */
+}
+
+.content p {
+	text-align: justify;
+	line-height: 14px;
+}
+
+h1,
+p {
+	margin: 5% 0;
+}
+
+.book {
+	height: 0;
+    padding-top: 62%;
+	width: 100%;
+	background-image: url("https://i.imgur.com/Wevzk0d.png");
+	background-size: contain;
+	position: relative;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page {
+	height: 92.5%;
+	width: 44%;
+	line-height: 1.5;
+	border-right: 10px solid transparent;
+	position: absolute;
+    top: 3%;
+    right: 6%;
+	transform-origin: 0 50%;
+	transition: 0.8s;
+	/*animation: unflip .3s linear;*/
+}
+[class*="side"] {
+	height: 100%;
+	width: 106%;
+	position: absolute;
+	background-image: url("https://i.imgur.com/jA7Bw4p.png");
+	background-size: 100% 100%;
+	backface-visibility: hidden;
+	overflow: auto;
+	padding: 8% 8%;
+}
+.side-1 {
+	z-index: 2;
+	box-shadow: inset 19px 0 11px -7px rgb(0 0 0 / 9%);
+	transition: 0.5s;
+}
+.side-2 {
+	transform: rotateY(180deg);
+}
+.flipped > .side-1 {
+	box-shadow: inset 19px 0 11px -7px rgb(0 0 0 / 9%);
+	transition: 0.6s;
+}
+.flipped > [class*="side"] {
+	pointer-events: auto;
+}
+.page:after {
+    z-index: 10;
+	width: 25px;
+	height: 25px;
+	line-height: 20px;
+	background-color: #5a372b;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: -23%;
+	margin: auto;
+	color: white;
+	text-shadow: 0 -1px 0 #755f588c;
+	text-align: center;
+	font-family: monospace;
+	content: ">";
+	animation: hide 0.8s linear;
+	border: 1px solid #b99789;
+}
+.page.flipped:after {
+	content: "<";
+	transform: rotateY(180deg);
+	pointer-events: auto;
+}
+
+.side-1 h2, .side-2 h2, .side-1 h1, .side-2 h1 {
+    font-size: 144%;
+    text-align: left;
+    font-weight: 600;
+    font-family: 'Gentium Book Basic', serif;
+}
+
+.side-1 p, .side-2 p {
+    font-size: 100%;
+    font-family: 'Gentium Book Basic', serif;
+}
+/* to hide on flip animation */
+@keyframes hide {
+	0% {
+		opacity: 0;
+	}
+	85% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.flipped {
+	transform: rotateY(-180deg);
+	pointer-events: none;
+	/*animation: flip .3s linear;
+  animation-fill-mode: forwards;*/
+}
+
+.no-anim,
+.no-anim:after {
+	animation: none; /* disable animation when page loads */
+}
+@keyframes flip {
+	to {
+		transform: rotateY(-180deg);
+	}
+}
+@keyframes unflip {
+	from {
+		transform: rotateY(-180deg);
+	}
+	to {
+		transform: rotateY(0deg);
+	}
+}
+
+  </style>
+
+<script>
+
+$(".page").click(function () {
+	$(this).removeClass("no-anim").toggleClass("flipped");
+	$(".page > div").click(function (e) {
+		e.stopPropagation();
+	});
+	reorder();
+});
+function reorder() {
+	$(".book").each(function () {
+		var pages = $(this).find(".page");
+		var pages_flipped = $(this).find(".flipped");
+		pages.each(function (i) {
+			$(this).css("z-index", pages.length - i);
+		});
+		pages_flipped.each(function (i) {
+			$(this).css("z-index", i + 1);
+		});
+	});
+}
+reorder();
+
+</script>

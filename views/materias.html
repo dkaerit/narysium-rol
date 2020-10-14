@@ -21,6 +21,10 @@
     cursor: pointer;
 }
 
+img.materiasPic {
+    z-index: 10;
+}
+
 .selectorMat {
     display: flex;
     flex-wrap: wrap;
@@ -108,7 +112,7 @@
     <p>Herbología, también conocida como botánica, es el estudio de las plantas y los hongos mágicos y mundanos, por lo que es el equivalente mágico a la botánica.</p>
     <p>Herbología es una asignatura básica, en la que los estudiantes aprenden acerca de sus propiedades mágicas y para qué se utilizan. Muchas plantas proporcionan ingredientes para pociones y medicinas variadas, mientras que otras tienen efectos mágicos de su propio derecho. Tiene una conexión en este aspecto con el simpatismo en concreto con su filosofía de similitudes, lo cual se basa en la idea de que algo puede influir en otro algo basado en su relación o semejanza. Esto incluye asociaciones como las hierbas con savia amarilla y su cura para la ictericia, o que las nueces podrían fortalecer el cerebro debido a la semejanza con el mismo.</p>
     <p>Los estudiantes pasan el tiempo de clase aprendiendo sobre las diferentes variedades de plantas mágicas que existen, cómo tratar con ellas, y sus propiedades. Cuanto mayor es el grado de conocimiento de la clase con la que se está trabajando, las plantas estudiadas se vuelven más complejas y peligrosas. Por ello, la mayoría de las clases se impartirán en los terrenos de la academia, un aula asignada y el invernadero.</p>
-
+    <%- include(`./partials/book_herb.html`) %>
 </div>
 
 <!--mat-->
