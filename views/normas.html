@@ -1,45 +1,392 @@
 <%- include(`./partials/top-part.html`) %>
 <h1>Normas Generales</h1>
-<div class="t2">Ingreso</div>
-    <br><br><b>— Reserva tu FC</b>: Tendrás que llevar a cabo una serie de requisitos para ingresar al fake, lo tipico, ya estarás curtido en esto así que sabrás que lo primero de todo es reservar tu <i>Face Claim</i> en la mensajería privada. Éstas tendran <b>validez durante de 1 semana</b>. A partir de ahí se perderá la reserva.
-    <br><br><b>— No repetir FC</b>: Esto ya debes imaginarlo. Para evitar gemelos no deseados, no está permitido repetir Face Claims que ya estén ocupados por otros personajes.
-    <br><br><b>— Mutuals</b>: Es necesario que sigas a todos los miembros a los que sigue @narysiumrol, así como la misma cuenta, no utilizamos una lista para los miembros ya que no la necesitamos.
-    <br><br><b>— Hashtag</b>: Es importante que el hashtag #NSR sea visible en el perfil para que se refleje que es miembro de nuestra comunidad.
-    <br><br><b>— Nickname</b>: También es importante que en el "@" de twitter, tenga la cadena <b>nsr</b> de la combinación que se prefiera.
-    <br><br><b>— Creando el PJ</b>: Para una guía de la cración de tu personaje en el menú de navegación pulsa el icono de los dados. Es recomendable que leas un poco del mapa para tener una idea de como está formado el mundo de Narysium.
+
+<style>
+.circle-num {
+    display: table-cell;
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    padding-top: 5px;
+    position: relative;
+    top: 19px;
+    font-size: 19px;
+    border-radius: 100%;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Biryani', sans-serif;
+}
+
+.text-norma {
+    border-radius: 10px;
+    padding: 22px;
+    margin-top: 1px;
+}
+
+.titlle-norma {
+    font-family: 'BIRYANI';
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.ingreso-norm {background: #be5131;}
+.ingreso-title {color: #be5131;}
+.ingreso-def {background: #f7ceac;}
+
+.cuentas-norm {background: #56abab;}
+.cuentas-title {color: #56abab;}
+.cuentas-def {background:#beddec;}
+
+.convivencia-norm {background:#53b55b;}
+.convivencia-title {color: #53b55b;}
+.convivencia-def {background: #c3ecbe;}
+
+.calidad-norm {background: #a153b5;}
+.calidad-title {color: #a153b5;}
+.calidad-def {background: #ebbbf7;}
+
+.inactiv-norm {background: #b5ad53;}
+.inactiv-title {color: #b5ad53;}
+.inactiv-def {background: #e4e0b5;}
+
+
+</style>
+
+
+<!-- Norma 1 -->
+<div class="t2">Normas de ingreso</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 col-sm-2">
+                <center><div class="circle-num ingreso-norm">01</div></center>
+            </div>
+            <div class="col-9 col-sm-10">
+                <div class="titlle-norma ingreso-title">Reservas</div>
+                <div class="text-norma ingreso-def">Las reservas tendrán una <b>validez de 1 semana</b>. A partir de ahí se perderá la reserva.</div>
+            </div>
+        </div>
+    </div><br><br>
+
+<!-- Norma 2 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num ingreso-norm">02</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma ingreso-title">No repetir FC</div>
+            <div class="text-norma ingreso-def">Esto ya debes imaginarlo. Para evitar gemelos no deseados, no está permitido repetir Face Claims que ya estén ocupados por otros personajes.</div>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Norma 3 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num ingreso-norm">03</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma ingreso-title">Mutuals de comunidad</div>
+            <div class="text-norma ingreso-def">Es necesario que sigas a todos los miembros a los que sigue <b>@narysiumrol</b>, así como la misma cuenta, no utilizamos una lista para los miembros ya que no la necesitamos.</div>
+        </div>
+    </div>
+</div><br><br>
+    
+<!-- Norma 4 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num ingreso-norm">04</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma ingreso-title">Hashtag del fake</div>
+            <div class="text-norma ingreso-def">Es importante que el hashtag #NSR sea visible en el perfil para que se refleje que es miembro de nuestra comunidad.</div>
+        </div>
+    </div>
+</div><br><br>
+    
+<!-- Norma 5 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num ingreso-norm">05</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma ingreso-title">Nickname</div>
+            <div class="text-norma ingreso-def">También es importante que en el "@" de twitter, tenga la cadena <b>nsr</b> de la combinación que se prefiera.</div>
+        </div>
+    </div>
+</div><br><br>
+
 <br><br>
 <div class="t2">Cuentas</div>
-    <br><br><b>— Multicuentas</b>: No hay un límite para las multicuentas, puedes tener dentro del fake tantos OC como quieras mientras sean activos. Eso sí, para crear una segunda cuenta se debe esperar mínimo 2 semana.
-    <br><br><b>— Mutaciones</b>: Se puede mutar la primera vez sin restricción de permanencia. Pero a partir de la segunda, no se aceptan mutaciones si no ha pasado mínimo 2 semanas desde que se hizo la última. 
-    <br><br><b>— Semimitaciones/AU</b>: Las semimutaciones o versiones de universo alternativo del PJ no deberán prolongarse más de 1 semana.
+<!-- Norma 6 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num cuentas-norm">06</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma cuentas-title">Multicuentas</div>
+            <div class="text-norma cuentas-def">No hay un límite para las multicuentas, puedes tener dentro del fake tantos OC como quieras mientras sean activos. Eso sí, para crear una segunda cuenta se debe esperar <b>mínimo 2 semanas</b>.</div>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Norma 7 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num cuentas-norm">07</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma cuentas-title">Mutaciones</div>
+            <div class="text-norma cuentas-def">Se puede mutar la primera vez sin restricción de permanencia. Pero a partir de la segunda, no se aceptan mutaciones si no ha pasado <b>mínimo 2 semanas</b> desde que se hizo la última.</div>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Norma 8 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num cuentas-norm">08</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma cuentas-title">Semimitaciones / AU</div>
+            <div class="text-norma cuentas-def">Las semimutaciones o versiones de universo alternativo del PJ (AU) no deberán prolongarse más de <b>1 semana</b>.</div>
+        </div>
+    </div>
+</div><br><br>
+
+<div class="t2">Convivencia</div>
+<i>La mayoría de los fakes se mueren cuando se reunen un número concreto de conocidos y deciden elaborar una trama, apoyandose entre ellos, y aunque tener un grupo está bien, es necesario darles oportunidades al resto. Puedes encontrar bellas personas donde menos te lo esperas. 
+    <br><br>
+    ¿Pero por qué pasa esto? Porque hay gente que busca sentirse integrada. Y esto no es la selva del FreeRol, aquí se supone que todos deben quererse entre todos.
+    <br><br>
+    Cuando estamos en una comunidad a veces es importante, por el bien de la misma que no sólo os sintáis cómodos entre conocidos, sino que abráis vuestras fronteras y hagáis todo lo posible por hacer que la gente se sienta querida, necesaria, importante. <b><br><br>Intentad que una persona sienta: "Ah, que ilusión, ese alguien me está esperando, no sobro." cada vez que vaya a conectarse para rolear en el fake.</b></i>
+<br><br>
+<!-- Norma 9 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num convivencia-norm">09</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma convivencia-title">Integrar a otros</div>
+            <div class="text-norma convivencia-def">Os parecerá una chorrada, pero muchas veces se le resta importancia, y es que, aunque tu PJ sea un malandrín, un silencioso o tímido que evita la cercanía. Por favor: <b>No ignores a nadie, acoge a los nuevos y promueve el rol por TL aunque nadie se moje</b>.</div>
+        </div>
+    </div>
+</div><br>
+<br>
+
+<!-- Norma 10 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num convivencia-norm">10</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma convivencia-title">Respeto</div>
+            <div class="text-norma convivencia-def">Un fake no es nada sin sus miembros, por ello se pide respeto entre ustedes para que la estancia en Narysium rol sea agradable para todos.</div>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Norma 11 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num convivencia-norm">11</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma convivencia-title">Bardos</div>
+            <div class="text-norma convivencia-def">Cualquier problema que haya en el mismo con algún otro miembro, pedimos que se nos notifique por privado y la administración determinará qué hacer.</div>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Norma 12 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num convivencia-norm">12</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma convivencia-title">Sexrol</div>
+            <div class="text-norma convivencia-def">El sexrol está permitido en el fake siempre y cuando en menciones se avise con el (+18) en el twitt inicial, o si no, recurrir a la vieja confiable: Mensajería privada.</div>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Norma 12 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num convivencia-norm">13</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma convivencia-title">Contenido sensible</div>
+            <div class="text-norma convivencia-def">Se puede enviar contenido NFSW siempre y cuando se tenga habilitado la opción de twitter: <b>"Marcar el contenido que twitteas para indicar que podría incluir material delicado"</b>. No obstante si las imágenes se pasan de obscenas o gortescas (semen, anatomías desproporcionadas, etc) será motivo de expulsión. </div>
+        </div>
+    </div>
+</div><br><br>
+
+<div class="t2">Calidad</div>
+<!-- Norma 13 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num calidad-norm">14</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma calidad-title">Pobreza literaria</div>
+            <div class="text-norma calidad-def">Obviamente no vamos a pedir una ortografía perfecta ni una narrativa de Cervantes, pero si nos gustaría que no se limitasen a responder simples <i>-te miro-</i>, o pecar con el uso de emojis, así como las caritas.</div>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Norma 14 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num calidad-norm">15</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma calidad-title">Abusar del usereo</div>
+            <div class="text-norma calidad-def">Está bien querer comunicar algo en modo off-rol, lo que no podemos permitir es que se abuse de éste. Si vemos a alguien pasandose con el modo user le llamaremos la atención, y si no aprende la lección comenzaremos a darle strikes.</div>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Norma 15 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num calidad-norm">16</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma calidad-title">Canal mental</div>
+            <div class="text-norma calidad-def"> 
+                Con canal mental nos referimos a la tendencia de simular un diálogo pero sin llegar a establecer una comunicación de verdad.
+                <br><br>
+                <i>"Linyuan diría que el chico es demasiado rápido para ella"</i><br>
+                <i>"La chica se va a llevar una sorpresa el día que se crucen."</i><br>
+                <i>"Saludaría al recién llegado pero no le conoce"</i><br>
+                <br>
+                Como veis, no aportan nada, no dan juego, no describen qué hace el personaje. No dan cabida a la interacción, por tanto es una mala práctica que debeis evitar. <b>Hablad, usad los diálogos. Y si vuestro personaje es mudo usad el lenguaje de signos o una pizarra. Pero interactuad.</b>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Norma 16 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num calidad-norm">17</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma calidad-title">Godrol y metarol</div>
+            <div class="text-norma calidad-def"> 
+                Tu personaje no es omnisciente, no puede saber cosas que no ha prsenciado, del mismo modo que no existe nadie sin defectos, siempre hay algo en lo que falla, algún ámbito que no se le dé tan bien. <br><br>No toleraremos personajes que sean infalibles, que lo esquivan todo en combate, con poderes de un dios, o que asuma acciones de otros PJ, algo como <i>"Le hice la zancadilla a Remulia y remulia cayó de bruces al suelo"</i>, sin dejarle opción a éste a responder que fue capaz de verlo a tiempo y reaccionar rápido.
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
 <br><br>
 <div class="t2">Inactividad</div>
-    <br><br><b>— Límite</b>: Hacemos revisión cada dos semanas, lo que supone una expulsión de no haber twitteado nada en esos 10 días.
-    <br><br><b>— No todo es "actividad"</b>: Ni Los RT ni las citas cuentan como actividad. Aunque en la lista de usuarios aparezcas como <b>activo</b> estaremos al tanto de si cumple esta condición.
-    <br><br><b>— Hiatus</b>: Para facilitarnos la gestión, se piede que las cuentas ausentes se pongan la marca de "[Hiatus]" o similar en el nombre.
-    <br><br><b>— Solicitar ausencia</b>: Se puede solicitar una ausencia por privado. Sólamente dinos hasta cuando piensas que durará la ausencia y nosotros te mantendremos como miembro.
-    <br><br><b>— Prolongar ausencia</b>: Se necesita un motivo de peso para prolongar la ausencia.
-    <br><br><b>— Foráneos</b>: Se puede seguir a un máximo de 5 cuentas ajenas al fake, sin embargo, interactuar con ellas tampoco cuenta como actividad. <b>Es importante</b> que cada uno se cree una lista de twitter para incluir a todos los foráneos mutuals. También pedimos que sólo interactúen con éstos mediante menciones o citas, pues ya que el resto no podrá verlo causaría confusión.
-    <br><br><b>— Despedidas</b>: Agradeceríamos que si te fueras a ir, nos lo comunicases antes para hacer lo propio.
-<br><br>
-<div class="t2">Calidad</div>
-<br><br><b>— Pobreza literaria</b>: Obviamente no vamos a pedir una ortografía perfecta ni una narrativa de Cervantes, pero si nos gustaría que no se limitasen a responder simples <i>-te miro-</i>, o pecar con el uso de emojis, así como las caritas.
-<br><br><b>— Usereo</b>: Está bien querer comunicar algo en modo off-rol, lo que no podemos permitir es que se abuse de este. Si vemos a alguien pasandose con el modo user le llamaremos la atención, y si no aprende la lección comenzaremos a darle strikes.
-<br><br><b>— Canal mental</b>: Con canal mental nos referimos a la tendencia de simular un diálogo pero sin llegar a establecer una comunicación de verdad. La típica de hablar con acciones. Abusar de encerrarse en las acciones está prohibido y será motivo de llamada de atención. Los personajes tienen boca por algo. Y  bueno, si tu personaje es mudo, existen otros lenguajes como el lenguaje de signos o el escrito.
-<br><br><b>— Godrol/Metarol</b>: A nadie le agrada tener que toparse con estos dos pecados roleros, ni aquí ni en el rol de mesa, por eso tenemos que avisaros de que es motivo de strikes. Por si acaso eres nuevo por aquí, abajo explicaremos qué es cada cosa.
-<br><br>
-<ul>
-    <li><i>Metarol</i>: De forma resumida es hacer uso de información que se supone debería ser desconocida entre personajes. Ser omnisciente, por ejemplo.</li>
-    <li><i>Godrol</i>: También conocido como powergaming se resume en el típico personaje infalible para cualquier accion que desempeñe, todo lo hace bien, nunca fracasa en nada. Esquivarlo todo en un combate es síntoma de godrol.</li>
-</ul>
-<i>A los 3 strikes se dará paso a la expulsión del afectado</i>
-<br><br>
-<div class="t2">Convivencia</div>
-<br><br><b>— Respeto</b>: Un fake no es nada sin sus miembros, por ello se pide respeto entre ustedes para que la estancia en Narysium rol sea agradable para todos. No hay frase oculta.
-<br><br><b>— Bardos</b>: Cualquier problema que haya en el mismo con algún otro miembro, pedimos que se nos notifique por privado y la administración determinará qué hacer.
-<br><br><b>— Sexrol</b>: El sexrol está permitido en el fake siempre y cuando sea por mención o mensajería privada.
-<br><br><b>— Contenido sensible</b>: En este fake queremos dejar cierta libertad a la hora de subir "seductives"; Pero existe una línea que separa lo que es una imagen <i>"sugerente y picante pero estética"</i> de una <i>"obscena y grosera" (semen, anatomías desproporcionadas, etc)</i>. Lo segundo está prohibido, esperamos que sepan discernir sobre esta distinción. De todas formas, abusar mucho aunque sea del primero, será motivo de llamada de atención, y de strike si no se hace caso.
-<br><br>
+
+<!-- Norma 16 -->
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num inactiv-norm">18</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma inactiv-title">Limite de actividad</div>
+            <div class="text-norma inactiv-def"> 
+                Hacemos revisión cada semanas, y todo aquel que no haya twitteado nada <b>en 10 días será expulsado.</b> 
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num inactiv-norm">19</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma inactiv-title">Menciones ≠ actividad</div>
+            <div class="text-norma inactiv-def"> 
+                Para promover los roles en TL, los cuales en definitiva, son los que le dan vida al fake, no contaremos como actividad aquellos que se elaboren en menciones. Esto quiere decir, que podeis hacer roles en menciones sin problema, pero al final de la semana nos fijaremos en vuestros roles normales para determinar su actividad. 
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num inactiv-norm">20</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma inactiv-title">Hiatus</div>
+            <div class="text-norma inactiv-def"> 
+                Las cuentas que hayan solicitado una ausencia se les pide que pongan algo que indique el hiatus en su nick como "[Hiatus]".
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num inactiv-norm">21</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma inactiv-title">Solicitar ausencia</div>
+            <div class="text-norma inactiv-def"> 
+                Si por algún motivo algo comienza a ocupar tu tiempo y no puedes dedicarle tanta atención a la cuenta, puedes solicitar una ausencia. Sólo basta que nos des una fecha para cuando crees que podrás retomar el tiempo de la cuenta para guardar el PJ y dejarlo ajeno del periodo de inactividad.
+                <br>
+                <i>Si necesitas prolongar tu ausencia necesitas un motivo de peso.</i>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num inactiv-norm">22</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma inactiv-title">Foráneos</div>
+            <div class="text-norma inactiv-def"> 
+                Se puede seguir a un máximo de 5 cuentas ajenas al fake, sin embargo, interactuar con ellas tampoco cuenta como actividad. <b>Es importante</b> que cada uno se cree una lista de twitter para incluir a todos los foráneos mutuals. También pedimos que sólo interactúen con éstos mediante menciones o citas, pues ya que el resto no podrá verlo causaría confusión.
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-sm-2">
+            <center><div class="circle-num inactiv-norm">23</div></center>
+        </div>
+        <div class="col-9 col-sm-10">
+            <div class="titlle-norma inactiv-title">Despedidas</div>
+            <div class="text-norma inactiv-def"> 
+                Agradeceríamos que si te fueras a ir, nos lo comunicases antes para hacer lo propio.
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+
  
 <%- include(`./partials/bot-part.html`) %>
 
