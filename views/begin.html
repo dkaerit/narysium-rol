@@ -203,9 +203,7 @@ animation: fadeIn ease 20s;
             },
             duration: 750,
             elasticity: 300,
-            delay: function(el, i) {
-                return 75 * (i+1)
-            },
+            delay: function(el, i) {return 75 * (i+1)},
             update: function(anim) {
                 // console.log(anim.currentTime + 'ms'); // Get current animation time with `myAnimation.currentTime`, return value in ms.
                 // console.log(anim.progress + '%'); // Get current animation progress with `myAnimation.progress`, return value in %

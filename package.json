@@ -1,5 +1,5 @@
 {
-  "name": "Narysium-rol",
+  "name": "narysiumrol",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
